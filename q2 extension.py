@@ -1,31 +1,23 @@
-def get_file_types(extension_type_string, filenames):
+def ans(combo, filenames):
 
-    extension_type_pairs = {}
-    pairs = extension_type_string.split(';')
+    ap = {}
+    pairs = combo.split(';')
 
-    # Create a dictionary with extension:type pairs
-    for pair in pairs:
-        extension, file_type = pair.split(',')
-        extension_type_pairs[extension] = file_type
+    for x in pairs:
+        extension, file_type = x.split(',')
+        ap[extension] = file_type
 
     result = {}
-
-    # Iterate through the filenames and determine their types
-    for filename in filenames:
-        # Extract the extension from the filename
-        extension = filename.split('.')[-1]
-
-        # Determine the type based on the extension
-        file_type = extension_type_pairs.get(extension, 'unknown')
-
-        # Add the filename:type pair to the result dictionary
-        result[filename] = file_type
+    for x in filenames:
+        extension = x.split('.')[-1]
+        file_type = ap.get(extension, 'unknown')
+        result[x] = file_type
 
     return result
 
 
-types = "xls,spreadsheet;xlsx,spreadsheet;jpg,image"
+combo = "xls,spreadsheet;xlsx,spreadsheet;jpg,image"
 filenames = ["abc.jpg", "xyz.xls", "text.csv", "123"]
 
-result = get_file_types(types, filenames)
-print(result)
+fans = ans(combo, filenames)
+print(fans)

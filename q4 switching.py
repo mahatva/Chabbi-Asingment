@@ -1,5 +1,4 @@
-def switch_key_value_pairs(dictionary):
-
+def ans(dictionary):
     return {v: k for k, v in dictionary.items()}
 
 input_dict = {
@@ -10,5 +9,5 @@ input_dict = {
     "key5": "value5"
 }
 
-result_dict = switch_key_value_pairs(input_dict)
-print(result_dict)
+fans = ans(input_dict)
+print(fans)
